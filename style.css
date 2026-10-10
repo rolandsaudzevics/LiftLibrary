@@ -132,3 +132,13 @@ needs JavaScript */
     background-color: #3f3f3f;
     color: white;
 }
+
+#footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 10px 20px;
+    margin-top: 20px;
+    bottom: 0;
+}
