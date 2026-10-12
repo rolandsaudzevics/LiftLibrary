@@ -3,6 +3,13 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
 }
 
 h1, h3, h5, p {
@@ -108,6 +115,12 @@ hr {
    
 }
 
+.section-title {
+    margin: 24px 16px 0;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
 .filter-buttons button {
     padding: 10px 20px;
     border: none;
@@ -133,6 +146,22 @@ needs JavaScript */
     color: white;
 }
 
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    padding: 16px;
+}
+
+.card {
+    padding: 16px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+
+
 #footer {
     display: flex;
     justify-content: center;
@@ -140,5 +169,4 @@ needs JavaScript */
     background-color: white;
     padding: 10px 20px;
     margin-top: 20px;
-    bottom: 0;
 }
