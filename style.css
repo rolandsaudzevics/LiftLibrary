@@ -61,6 +61,11 @@ h1, h3, h5, p {
     background-color: #f0f0f0;
 }
 
+.save-btn[aria-pressed="true"] {
+    background-color: #f0f0f0;
+    color: #d69b20;
+}
+
 .save-btn:focus-visible {
     outline: 2px solid currentColor;
     outline-offset: 2px;
@@ -154,6 +159,12 @@ hr {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 16px;
     padding: 16px;
+}
+
+.no-results {
+    grid-column: 1 / -1;
+    padding: 16px;
+    text-align: center;
 }
 
 /* Basic appearance of each exercise card */
