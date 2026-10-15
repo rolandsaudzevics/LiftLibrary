@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <!-- Site name and saved-exercise count -->
     <header class="header">
         <h3>LiftLibrary</h3>
 
@@ -18,12 +18,13 @@
             <button class="save-btn" type="button" aria-label="Saved exercises" title="Saved exercises">
                 <span class="material-symbols-outlined" aria-hidden="true">bookmark</span>
             </button>
-            <h5>Saved: 0</h5>
+            <h5>Saved: <span id="savedCount" aria-live="polite">0</span></h5>
             
         </div>
     </header>
 
     <main>
+    <!-- Intro text and exercise search -->
     <div class="hero">
         <h1> Learn the Lifts</h1>
         
@@ -40,38 +41,73 @@
   <center><hr style="width: 80%;"></center>
     <h2 class="section-title">All Exercises</h2>
 
+        <!-- Category buttons filter the exercise cards below. -->
   <div class="filter-buttons"> 
-    
-     <button>Chest</button>    
-     <button>Back</button> 
-      <button>Shoulders</button>    
-     <button>Arms</button>  
-      <button>Core</button>  
-      <button>Legs</button>  
+        <button class="selected" data-filter="all" aria-pressed="true">All</button>
+        <button data-filter="chest" aria-pressed="false">Chest</button>
+        <button data-filter="back" aria-pressed="false">Back</button>
+        <button data-filter="shoulders" aria-pressed="false">Shoulders</button>
+        <button data-filter="arms" aria-pressed="false">Arms</button>
+        <button data-filter="core" aria-pressed="false">Core</button>
+        <button data-filter="legs" aria-pressed="false">Legs</button>
 
     </div>
 
  <div class="grid-container" id="exerciseGrid">
-        <!-- Exercise cards will be dynamically inserted here -->
-    <div class="card">
-            <h3>Push-up</h3>
+     <!-- Each card's category must match one of the filters above. -->
+    <div class="cards" data-category="chest">
+            <div class="card-heading">
+                <h3>Push-up</h3>
+                <button class="card-save" type="button" aria-label="Save Push-up" aria-pressed="false">
+                    <span class="material-symbols-outlined card-star" aria-hidden="true">star</span>
+                </button>
+            </div>
             <p>Classic bodyweight exercise for upper body strength.</p>
         </div>
-        <div class="card">
-            <h3>Squat</h3>
+        <div class="cards" data-category="legs">
+            <div class="card-heading">
+                <h3>Squat</h3>
+                <button class="card-save" type="button" aria-label="Save Squat" aria-pressed="false">
+                    <span class="material-symbols-outlined card-star" aria-hidden="true">star</span>
+                </button>
+            </div>
             <p>Compound lower-body movement that builds leg strength.</p>
         </div>
-        <div class="card">
-            <h3>Plank</h3>
+        <div class="cards" data-category="core">
+            <div class="card-heading">
+                <h3>Plank</h3>
+                <button class="card-save" type="button" aria-label="Save Plank" aria-pressed="false">
+                    <span class="material-symbols-outlined card-star" aria-hidden="true">star</span>
+                </button>
+            </div>
             <p>Isometric core exercise that trains trunk stability.</p>
         </div>
-        <div class="card">
-            <h3>Dumbbell Row</h3>
+        <div class="cards" data-category="back">
+            <div class="card-heading">
+                <h3>Dumbbell Row</h3>
+                <button class="card-save" type="button" aria-label="Save Dumbbell Row" aria-pressed="false">
+                    <span class="material-symbols-outlined card-star" aria-hidden="true">star</span>
+                </button>
+            </div>
             <p>Pulling movement that targets the back and arms.</p>
         </div>
-        <div class="card">
-            <h3>Overhead Press</h3>
+        <div class="cards" data-category="shoulders">
+            <div class="card-heading">
+                <h3>Overhead Press</h3>
+                <button class="card-save" type="button" aria-label="Save Overhead Press" aria-pressed="false">
+                    <span class="material-symbols-outlined card-star" aria-hidden="true">star</span>
+                </button>
+            </div>
             <p>Upper-body press that strengthens the shoulders.</p>
+        </div>
+        <div class="cards" data-category="arms">
+            <div class="card-heading">
+                <h3>Bicep Curl</h3>
+                <button class="card-save" type="button" aria-label="Save Bicep Curl" aria-pressed="false">
+                    <span class="material-symbols-outlined card-star" aria-hidden="true">star</span>
+                </button>
+            </div>
+            <p>Simple dumbbell exercise that targets the biceps.</p>
         </div>
 </div>
 
@@ -84,6 +120,7 @@
     
     
 
+<!-- Copyright at the bottom of the page -->
 <footer id="footer">
         <p>© 2026 LiftLibrary. </p>
     

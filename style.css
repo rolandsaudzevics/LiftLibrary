@@ -1,3 +1,4 @@
+/* Page defaults and full-page layout */
 body {
     margin: 0;
     padding: 0;
@@ -16,6 +17,7 @@ h1, h3, h5, p {
     margin: 0;
 }
 
+/* Top bar and saved-exercise count */
 .header {
     display: flex;
     justify-content: space-between;
@@ -74,6 +76,7 @@ hr {
     border-top: 1px solid #ddd;
 }
 
+/* Intro text and search field */
 .hero {
     display: flex;
     min-height: 30vh;
@@ -107,6 +110,7 @@ hr {
     cursor: pointer;
 }
 
+/* Exercise heading and category filter buttons */
 .filter-buttons {
     display: flex;
     gap: 10px;
@@ -137,15 +141,14 @@ hr {
     color: white;
 }
 
-
-/* going to be used for the selected filter button
-needs JavaScript */
+/* The selected filter button gets a dark background. */
 
 .filter-buttons button.selected {
     background-color: #3f3f3f;
     color: white;
 }
 
+/* Arranges cards in columns that fit the screen. */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -153,15 +156,52 @@ needs JavaScript */
     padding: 16px;
 }
 
-.card {
+/* Basic appearance of each exercise card */
+.cards {
     padding: 16px;
     background-color: white;
     border: 1px solid #ddd;
     border-radius: 6px;
+    height: 5rem;
+
 }
 
+/* Puts the exercise name and star on one row */
+.card-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
+.card-star {
+    color: #777;
+    font-size: 22px;
+}
 
+/* Makes the star button clickable */
+.card-save {
+    padding: 4px;
+    border: 0;
+    background: none;
+    cursor: pointer;
+}
+
+.card-save[aria-pressed="true"] .card-star {
+    color: #d69b20;
+    font-variation-settings: 'FILL' 1;
+}
+
+.card-save:focus-visible {
+    outline: 2px solid currentColor;
+}
+
+.cards:hover {
+    background-color: #f0f0f0;
+    transition: background-color 0.3s ease;
+    transform: scale(1.02);
+}
+
+/* Footer at the bottom of the page */
 #footer {
     display: flex;
     justify-content: center;
