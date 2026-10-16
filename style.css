@@ -156,7 +156,7 @@ hr {
 /* Arranges cards in columns that fit the screen. */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 16px;
     padding: 16px;
 }
@@ -173,8 +173,7 @@ hr {
     background-color: white;
     border: 1px solid #ddd;
     border-radius: 6px;
-    height: 5rem;
-
+    height: auto;
 }
 
 /* Puts the exercise name and star on one row */
@@ -182,6 +181,18 @@ hr {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.card-steps {
+    margin: 12px 0 0;
+    padding-left: 20px;
+    color: #444;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.card-steps li + li {
+    margin-top: 4px;
 }
 
 .card-star {
