@@ -12,50 +12,49 @@
 <body>
     <!-- Site name and saved-exercise count -->
     <header class="header">
-        <h3>LiftLibrary</h3>
+        <p class="site-name">LiftLibrary</p>
 
         <div class="header-right">
             <button class="save-btn" type="button" aria-label="Show saved exercises" title="Show saved exercises" aria-pressed="false">
                 <span class="material-symbols-outlined" aria-hidden="true">bookmark</span>
             </button>
-            <h5>Saved: <span id="savedCount" aria-live="polite">0</span></h5>
+            <p class="saved-label">Saved: <span id="savedCount" aria-live="polite">0</span></p>
             
         </div>
     </header>
 
     <main>
     <!-- Intro text and exercise search -->
-    <div class="hero">
-        <h1> Learn the Lifts</h1>
-        
-        <h1> Build with confidence.</h1>      
+    <section class="hero" aria-labelledby="page-title">
+        <h1 id="page-title">Learn the Lifts</h1>
+        <p class="hero-subtitle">Build with confidence.</p>
 
-        <p>Clear instructions for fundamental gym movements, all in one straightforward library.
+        <p class="intro-description">Clear instructions for fundamental gym movements, all in one straightforward library.
 
         </p>
 
+        <label class="visually-hidden" for="searchInput">Search for an exercise</label>
         <input type="text" id="searchInput" placeholder="Search for an exercise...">
-
-        
-    </div>
-  <center><hr style="width: 80%;"></center>
-    <h2 class="section-title">All Exercises</h2>
+    </section>
+    <hr class="section-divider">
+    <section class="exercise-section" aria-labelledby="exercise-title">
+        <h2 class="section-title" id="exercise-title">All Exercises</h2>
 
         <!-- Category buttons filter the exercise cards below. -->
-  <div class="filter-buttons"> 
-        <button class="selected" data-filter="all" aria-pressed="true">All</button>
-        <button data-filter="chest" aria-pressed="false">Chest</button>
-        <button data-filter="back" aria-pressed="false">Back</button>
-        <button data-filter="shoulders" aria-pressed="false">Shoulders</button>
-        <button data-filter="arms" aria-pressed="false">Arms</button>
-        <button data-filter="core" aria-pressed="false">Core</button>
-        <button data-filter="legs" aria-pressed="false">Legs</button>
+        <nav class="filter-buttons" aria-label="Filter exercises by muscle group">
+            <button class="selected" data-filter="all" aria-pressed="true">All</button>
+            <button data-filter="chest" aria-pressed="false">Chest</button>
+            <button data-filter="back" aria-pressed="false">Back</button>
+            <button data-filter="shoulders" aria-pressed="false">Shoulders</button>
+            <button data-filter="arms" aria-pressed="false">Arms</button>
+            <button data-filter="core" aria-pressed="false">Core</button>
+            <button data-filter="legs" aria-pressed="false">Legs</button>
 
-    </div>
+        </nav>
 
  <div class="grid-container" id="exerciseGrid">
      <!-- Each card's category must match one of the filters above. -->
-    <div class="cards" data-category="chest">
+    <article class="cards" data-category="chest">
             <div class="card-heading">
                 <h3>Push-up</h3>
                 <button class="card-save" type="button" aria-label="Save Push-up" aria-pressed="false">
@@ -68,8 +67,8 @@
                 <li>Lower your chest toward the floor, bending your elbows.</li>
                 <li>Push back up until your arms are straight.</li>
             </ol>
-        </div>
-        <div class="cards" data-category="legs">
+        </article>
+        <article class="cards" data-category="legs">
             <div class="card-heading">
                 <h3>Squat</h3>
                 <button class="card-save" type="button" aria-label="Save Squat" aria-pressed="false">
@@ -82,8 +81,8 @@
                 <li>Bend your knees and hips to lower, keeping your back straight.</li>
                 <li>Push through your feet to stand back up.</li>
             </ol>
-        </div>
-        <div class="cards" data-category="core">
+        </article>
+        <article class="cards" data-category="core">
             <div class="card-heading">
                 <h3>Plank</h3>
                 <button class="card-save" type="button" aria-label="Save Plank" aria-pressed="false">
@@ -96,8 +95,8 @@
                 <li>Step your feet back and lift your body into a straight line.</li>
                 <li>Tighten your core and hold without letting your hips sag.</li>
             </ol>
-        </div>
-        <div class="cards" data-category="back">
+        </article>
+        <article class="cards" data-category="back">
             <div class="card-heading">
                 <h3>Dumbbell Row</h3>
                 <button class="card-save" type="button" aria-label="Save Dumbbell Row" aria-pressed="false">
@@ -110,8 +109,8 @@
                 <li>With a dumbbell in the other hand, pull it toward your hip.</li>
                 <li>Lower the weight slowly, then repeat on the other side.</li>
             </ol>
-        </div>
-        <div class="cards" data-category="shoulders">
+        </article>
+        <article class="cards" data-category="shoulders">
             <div class="card-heading">
                 <h3>Overhead Press</h3>
                 <button class="card-save" type="button" aria-label="Save Overhead Press" aria-pressed="false">
@@ -124,8 +123,8 @@
                 <li>Brace your core and press the weights overhead.</li>
                 <li>Lower them under control back to shoulder height.</li>
             </ol>
-        </div>
-        <div class="cards" data-category="arms">
+        </article>
+        <article class="cards" data-category="arms">
             <div class="card-heading">
                 <h3>Bicep Curl</h3>
                 <button class="card-save" type="button" aria-label="Save Bicep Curl" aria-pressed="false">
@@ -138,8 +137,8 @@
                 <li>Bend your elbows to curl the weights toward your shoulders.</li>
                 <li>Lower the weights slowly, keeping your elbows close to your body.</li>
             </ol>
-        </div>
-        <div class="cards" data-category="chest">
+        </article>
+        <article class="cards" data-category="chest">
             <div class="card-heading">
                 <h3>Barbell Bench Press</h3>
                 <button class="card-save" type="button" aria-label="Save Barbell Bench Press" aria-pressed="false">
@@ -152,8 +151,8 @@
                 <li>Lower the bar toward your mid-chest with control.</li>
                 <li>Press the bar up until your arms are extended.</li>
             </ol>
-        </div>
-        <div class="cards" data-category="chest">
+        </article>
+        <article class="cards" data-category="chest">
             <div class="card-heading">
                 <h3>Incline Dumbbell Press</h3>
                 <button class="card-save" type="button" aria-label="Save Incline Dumbbell Press" aria-pressed="false">
@@ -166,8 +165,8 @@
                 <li>Press the weights upward above your chest.</li>
                 <li>Lower them slowly back to the starting position.</li>
             </ol>
-        </div>
-        <div class="cards" data-category="chest">
+        </article>
+        <article class="cards" data-category="chest">
             <div class="card-heading">
                 <h3>Cable Chest Fly</h3>
                 <button class="card-save" type="button" aria-label="Save Cable Chest Fly" aria-pressed="false">
@@ -180,8 +179,8 @@
                 <li>Bring your hands together in front of your chest.</li>
                 <li>Open your arms slowly until you feel a comfortable stretch.</li>
             </ol>
-        </div>
-        <div class="cards" data-category="back">
+        </article>
+        <article class="cards" data-category="back">
             <div class="card-heading">
                 <h3>Lat Pulldown</h3>
                 <button class="card-save" type="button" aria-label="Save Lat Pulldown" aria-pressed="false">
@@ -194,8 +193,8 @@
                 <li>Pull the bar toward your upper chest while keeping your torso steady.</li>
                 <li>Let the bar rise back up under control.</li>
             </ol>
-        </div>
-        <div class="cards" data-category="back">
+        </article>
+        <article class="cards" data-category="back">
             <div class="card-heading">
                 <h3>Seated Cable Row</h3>
                 <button class="card-save" type="button" aria-label="Save Seated Cable Row" aria-pressed="false">
@@ -208,8 +207,8 @@
                 <li>Pull the handle toward your lower ribs, keeping your back tall.</li>
                 <li>Extend your arms forward slowly without rounding your back.</li>
             </ol>
-        </div>
-        <div class="cards" data-category="back">
+        </article>
+        <article class="cards" data-category="back">
             <div class="card-heading">
                 <h3>Face Pull</h3>
                 <button class="card-save" type="button" aria-label="Save Face Pull" aria-pressed="false">
@@ -222,8 +221,8 @@
                 <li>Pull the rope toward your face, leading with your elbows.</li>
                 <li>Extend your arms forward slowly to return.</li>
             </ol>
-        </div>
-        <div class="cards" data-category="shoulders">
+        </article>
+        <article class="cards" data-category="shoulders">
             <div class="card-heading">
                 <h3>Dumbbell Lateral Raise</h3>
                 <button class="card-save" type="button" aria-label="Save Dumbbell Lateral Raise" aria-pressed="false">
@@ -236,8 +235,8 @@
                 <li>Raise your arms out to the sides to about shoulder height.</li>
                 <li>Lower the weights slowly back to your sides.</li>
             </ol>
-        </div>
-        <div class="cards" data-category="shoulders">
+        </article>
+        <article class="cards" data-category="shoulders">
             <div class="card-heading">
                 <h3>Arnold Press</h3>
                 <button class="card-save" type="button" aria-label="Save Arnold Press" aria-pressed="false">
@@ -250,8 +249,8 @@
                 <li>Press overhead while rotating your palms to face forward.</li>
                 <li>Reverse the motion as you lower the weights.</li>
             </ol>
-        </div>
-        <div class="cards" data-category="arms">
+        </article>
+        <article class="cards" data-category="arms">
             <div class="card-heading">
                 <h3>EZ-Bar Curl</h3>
                 <button class="card-save" type="button" aria-label="Save EZ-Bar Curl" aria-pressed="false">
@@ -264,8 +263,8 @@
                 <li>Curl the bar toward your shoulders, keeping your elbows near your sides.</li>
                 <li>Lower the bar slowly until your arms are extended.</li>
             </ol>
-        </div>
-        <div class="cards" data-category="arms">
+        </article>
+        <article class="cards" data-category="arms">
             <div class="card-heading">
                 <h3>Hammer Curl</h3>
                 <button class="card-save" type="button" aria-label="Save Hammer Curl" aria-pressed="false">
@@ -278,8 +277,8 @@
                 <li>Curl the weights toward your shoulders without rotating your wrists.</li>
                 <li>Lower them slowly back to your sides.</li>
             </ol>
-        </div>
-        <div class="cards" data-category="arms">
+        </article>
+        <article class="cards" data-category="arms">
             <div class="card-heading">
                 <h3>Triceps Pushdown</h3>
                 <button class="card-save" type="button" aria-label="Save Triceps Pushdown" aria-pressed="false">
@@ -292,8 +291,8 @@
                 <li>Keep elbows by your sides and press the handle down.</li>
                 <li>Bend your elbows slowly to return to the start.</li>
             </ol>
-        </div>
-        <div class="cards" data-category="arms">
+        </article>
+        <article class="cards" data-category="arms">
             <div class="card-heading">
                 <h3>Overhead Triceps Extension</h3>
                 <button class="card-save" type="button" aria-label="Save Overhead Triceps Extension" aria-pressed="false">
@@ -306,8 +305,8 @@
                 <li>Bend your elbows to lower the weight behind your head.</li>
                 <li>Straighten your arms to raise it overhead again.</li>
             </ol>
-        </div>
-        <div class="cards" data-category="legs">
+        </article>
+        <article class="cards" data-category="legs">
             <div class="card-heading">
                 <h3>Hack Squat</h3>
                 <button class="card-save" type="button" aria-label="Save Hack Squat" aria-pressed="false">
@@ -320,8 +319,8 @@
                 <li>Lower by bending your knees while keeping your back against the support.</li>
                 <li>Push through your feet to return to the start without locking your knees.</li>
             </ol>
-        </div>
-        <div class="cards" data-category="legs">
+        </article>
+        <article class="cards" data-category="legs">
             <div class="card-heading">
                 <h3>Leg Press</h3>
                 <button class="card-save" type="button" aria-label="Save Leg Press" aria-pressed="false">
@@ -334,8 +333,8 @@
                 <li>Lower the platform until your knees bend comfortably.</li>
                 <li>Press through your feet to extend your legs without locking your knees.</li>
             </ol>
-        </div>
-        <div class="cards" data-category="legs">
+        </article>
+        <article class="cards" data-category="legs">
             <div class="card-heading">
                 <h3>Romanian Deadlift</h3>
                 <button class="card-save" type="button" aria-label="Save Romanian Deadlift" aria-pressed="false">
@@ -348,8 +347,8 @@
                 <li>Push your hips back and lower the weight along your legs with a flat back.</li>
                 <li>Drive your hips forward to stand tall again.</li>
             </ol>
-        </div>
-        <div class="cards" data-category="legs">
+        </article>
+        <article class="cards" data-category="legs">
             <div class="card-heading">
                 <h3>Leg Curl</h3>
                 <button class="card-save" type="button" aria-label="Save Leg Curl" aria-pressed="false">
@@ -362,8 +361,8 @@
                 <li>Bend your knees to curl the pad toward the backs of your thighs.</li>
                 <li>Return to the start slowly and with control.</li>
             </ol>
-        </div>
-        <div class="cards" data-category="legs">
+        </article>
+        <article class="cards" data-category="legs">
             <div class="card-heading">
                 <h3>Leg Extension</h3>
                 <button class="card-save" type="button" aria-label="Save Leg Extension" aria-pressed="false">
@@ -376,8 +375,8 @@
                 <li>Extend your knees to raise the pad in front of you.</li>
                 <li>Lower the pad slowly to the starting position.</li>
             </ol>
-        </div>
-        <div class="cards" data-category="legs">
+        </article>
+        <article class="cards" data-category="legs">
             <div class="card-heading">
                 <h3>Standing Calf Raise</h3>
                 <button class="card-save" type="button" aria-label="Save Standing Calf Raise" aria-pressed="false">
@@ -390,8 +389,8 @@
                 <li>Rise onto your toes as high as is comfortable.</li>
                 <li>Lower your heels slowly for a controlled stretch.</li>
             </ol>
-        </div>
-        <div class="cards" data-category="legs">
+        </article>
+        <article class="cards" data-category="legs">
             <div class="card-heading">
                 <h3>Hip Thrust</h3>
                 <button class="card-save" type="button" aria-label="Save Hip Thrust" aria-pressed="false">
@@ -404,8 +403,8 @@
                 <li>Drive through your feet to lift your hips until your torso is level.</li>
                 <li>Lower your hips under control and repeat.</li>
             </ol>
-        </div>
-        <div class="cards" data-category="core">
+        </article>
+        <article class="cards" data-category="core">
             <div class="card-heading">
                 <h3>Dead Bug</h3>
                 <button class="card-save" type="button" aria-label="Save Dead Bug" aria-pressed="false">
@@ -418,8 +417,8 @@
                 <li>Extend one arm and the opposite leg while keeping your back gently down.</li>
                 <li>Return to the start and alternate sides with control.</li>
             </ol>
-        </div>
-        <div class="cards" data-category="core">
+        </article>
+        <article class="cards" data-category="core">
             <div class="card-heading">
                 <h3>Hanging Knee Raise</h3>
                 <button class="card-save" type="button" aria-label="Save Hanging Knee Raise" aria-pressed="false">
@@ -432,8 +431,8 @@
                 <li>Lift your knees toward your torso without swinging.</li>
                 <li>Lower your legs slowly back to the hanging position.</li>
             </ol>
-        </div>
-        <div class="cards" data-category="core">
+        </article>
+        <article class="cards" data-category="core">
             <div class="card-heading">
                 <h3>Russian Twist</h3>
                 <button class="card-save" type="button" aria-label="Save Russian Twist" aria-pressed="false">
@@ -446,9 +445,10 @@
                 <li>Rotate your torso gently from side to side while keeping your chest lifted.</li>
                 <li>Move under control and avoid twisting through your lower back.</li>
             </ol>
-        </div>
+        </article>
         <p class="no-results" id="noResults" role="status" hidden>No exercises match your search or filters.</p>
 </div>
+    </section>
 
    
   
